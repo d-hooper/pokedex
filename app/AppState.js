@@ -1,12 +1,16 @@
 import { EventEmitter } from './utils/EventEmitter.js'
 import { createObservableProxy } from './utils/ObservableProxy.js'
-import { Pokemon } from './models/Pokemon.js'
+import { WildPokemon } from './models/WildPokemon.js'
+import { Pokemon } from './models/WildPokemon.js'
 
 class ObservableAppState extends EventEmitter {
 
 
-  /** @type { Pokemon[] }*/
-  pokemon = []
+  /** @type { WildPokemon[] }*/
+  wildPokemon = []
+
+  /** @type { Pokemon }*/
+  activePokemon = null
 
 }
 

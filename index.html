@@ -23,17 +23,56 @@
   </header>
 
   <main class="bg-dark">
-    <section class="container-fluid mt-2">
+    <section class="container-fluid my-2">
       <div class="row">
         <div class="col-xl-2 col-md-3">
-          <div class="p-1 border border-red rounded-2">
-            <h2 class="fs-4 text-bg-dark text-center">Pokemon</h2>
-            <div id="pokeList" class="overflow-y-auto">
+          <div class="p-1 border border-red rounded-2 overflow-y-auto">
+            <h2 class="fs-3 text-bg-dark text-center sticky-top">Pokemon</h2>
+            <div id="pokeList" class="">
               <!-- STUB list item 
               <button class="btn btn-dark text-teal text-capitalize text-start fw-bold w-100">
                 <span class="mdi mdi-pokeball"></span>
                 ${this.name}
               </button> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-8 col-md-6">
+          <div id="activePokemon" class="p-3 border border-red rounded-2">
+            <h3 class="text-bg-dark fw-bold text-center fs-1">Bulbasaur</h3>
+            <div class="d-flex justify-content-center">
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="from Pokemon" class="poke-img">
+              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png" alt="from back" class="poke-img">
+            </div>
+            <div class="border border-teal rounded-2 text-teal fs-3 fw-bold p-3">
+              <div class="mb-3">
+                <span class="bg-teal text-bg-teal rounded-pill py-2 px-3" title="Poison">Poison</span>
+              </div>
+              <hr class="my-1">
+              <div class="d-flex justify-content-between">
+                <p class="mb-0">Health:</p>
+                <span>0</span>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p class="mb-0">Attack:</p>
+                <span>0</span>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p class="mb-0">Defense:</p>
+                <span>0</span>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p class="mb-0">Speed:</p>
+                <span>0</span>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p class="mb-0">Height:</p>
+                <span>0</span>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p class="mb-0">Weight:</p>
+                <span>0</span>
+              </div>
             </div>
           </div>
         </div>

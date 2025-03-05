@@ -6,6 +6,7 @@ export class PokemonController {
 
   constructor() {
     AppState.on('wildPokemon', this.drawWildPokemon)
+    AppState.on('activePokemon', this.drawActivePokemon)
     this.getWildPokemon()
   }
 
@@ -15,6 +16,12 @@ export class PokemonController {
     const pokeListElm = document.getElementById('pokeList')
     pokemon.forEach(poke => pokemonContent += poke.wildPokemonList)
     pokeListElm.innerHTML = pokemonContent
+  }
+
+  drawActivePokemon() {
+    const pokemon = AppState.activePokemon
+    const activePokemonElm = document.getElementById('activePokemon')
+    activePokemonElm.innerHTML = pokemon.pokemonCard
   }
 
   async getWildPokemon() {

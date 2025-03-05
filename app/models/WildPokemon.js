@@ -8,7 +8,7 @@ export class WildPokemon {
 
   get wildPokemonList() {
     return `
-    <button onclick="app.pokemonController.getActivePokemon('${this.name}')" class="btn btn-dark text-teal text-capitalize text-start fs-5 fw-bold w-100">
+    <button onclick="app.pokemonController.getActivePokemon('${this.name}')" class="btn btn-dark text-teal text-capitalize text-start fs-5 fw-bold w-100" title="${this.name}" type="button">
       <span class="mdi mdi-pokeball"></span>
       ${this.name}
     </button>
@@ -55,14 +55,50 @@ export class Pokemon {
     // @ts-ignore
     for (let i = 0; i < types.length; i++) {
       const type = types[i];
-      return type.name
+      return `<span class="bg-teal text-light text-shadow rounded-pill py-2 px-3" title="${type.name}">${type.name}</span>`
     }
 
   }
 
   get pokemonCard() {
     return `
-    
+    <div  class="p-3 border border-red rounded-2">
+      <h3 class="text-bg-dark fw-bold text-center fs-1">${this.name}</h3>
+      <div class="d-flex justify-content-center">
+        <img src="${this.imgFrontURL}" alt="${this.name} from Pokemon" class="poke-img">
+        <img src="${this.imgBackURL}" alt="A picture of ${this.name} from behind" class="poke-img">
+      </div>
+      <div class="border border-teal rounded-2 text-teal fs-3 fw-bold p-3">
+        <div class="mb-3">
+          ${this.types}
+        </div>
+        <hr class="my-1">
+        <div class="d-flex justify-content-between">
+          <p class="mb-0">Health:</p>
+          <span>${this.health} hp</span>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p class="mb-0">Attack:</p>
+          <span>${this.attack} ap</span>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p class="mb-0">Defense:</p>
+          <span>${this.defense} dp</span>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p class="mb-0">Speed:</p>
+          <span>${this.speed} sp</span>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p class="mb-0">Height:</p>
+          <span>${this.height} cm</span>
+        </div>
+        <div class="d-flex justify-content-between">
+          <p class="mb-0">Weight:</p>
+          <span>${this.weight} kg</span>
+        </div>
+      </div>
+    </div>
     `
   }
 }

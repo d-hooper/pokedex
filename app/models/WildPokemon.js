@@ -16,90 +16,20 @@ export class WildPokemon {
   }
 }
 
-export class Pokemon {
-
-  /**
-   * @param {{ 
-   * name: string;
-   * types: array; 
-   * stats: { 
-   * base_stat: number; 
-   *  }[]; 
-   * weight: number; 
-   * height: number; 
-   * sprites: { 
-   *  front_default: string; 
-   *  back_default: string; 
-   *  }; 
-   * }} data
-   */
+export class SandboxPokemon extends WildPokemon {
   constructor(data) {
-    this.name = data.name
-    this.types = data.types
-    this.health = data.stats[0].base_stat
-    this.attack = data.stats[1].base_stat
-    this.defense = data.stats[2].base_stat
-    this.speed = data.stats[5].base_stat
-    this.weight = data.weight
-    this.height = data.height
-    this.imgFrontURL = data.sprites.front_default
-    this.imgBackURL = data.sprites.back_default
+    super(data);
+    
   }
 
-  get pokemonTypes() {
-    // let dict = {
 
-    // } 
-
-    const types = this.types
-    // @ts-ignore
-    for (let i = 0; i < types.length; i++) {
-      const type = types[i];
-      return `<span class="bg-teal text-light text-shadow rounded-pill py-2 px-3" title="${type.name}">${type.name}</span>`
-    }
-
-  }
-
-  get pokemonCard() {
+  get sandboxPokemonList() {
     return `
-    <div  class="p-3 border border-red rounded-2">
-      <h3 class="text-bg-dark fw-bold text-center fs-1">${this.name}</h3>
-      <div class="d-flex justify-content-center">
-        <img src="${this.imgFrontURL}" alt="${this.name} from Pokemon" class="poke-img">
-        <img src="${this.imgBackURL}" alt="A picture of ${this.name} from behind" class="poke-img">
-      </div>
-      <div class="border border-teal rounded-2 text-teal fs-3 fw-bold p-3">
-        <div class="mb-3">
-          ${this.types}
-        </div>
-        <hr class="my-1">
-        <div class="d-flex justify-content-between">
-          <p class="mb-0">Health:</p>
-          <span>${this.health} hp</span>
-        </div>
-        <div class="d-flex justify-content-between">
-          <p class="mb-0">Attack:</p>
-          <span>${this.attack} ap</span>
-        </div>
-        <div class="d-flex justify-content-between">
-          <p class="mb-0">Defense:</p>
-          <span>${this.defense} dp</span>
-        </div>
-        <div class="d-flex justify-content-between">
-          <p class="mb-0">Speed:</p>
-          <span>${this.speed} sp</span>
-        </div>
-        <div class="d-flex justify-content-between">
-          <p class="mb-0">Height:</p>
-          <span>${this.height} cm</span>
-        </div>
-        <div class="d-flex justify-content-between">
-          <p class="mb-0">Weight:</p>
-          <span>${this.weight} kg</span>
-        </div>
-      </div>
-    </div>
+      <input type="checkbox" class="me-1">
+      <button class="btn btn-teal fs-5 text-capitalize text-start fw-bold w-100">
+        <span class="mdi mdi-pokeball"></span>
+          Bulbasaur
+      </button>
     `
   }
 }
-

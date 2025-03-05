@@ -15,19 +15,28 @@
 <body data-bs-theme="light">
   <!-- SECTION -->
   <header>
-    <nav class="navbar bg-codeworks text-light gap-2 px-2">
+    <nav class="navbar bg-danger text-light text-shadow gap-2 px-2">
       <img src="./assets/img/logo.png" height="45" alt="" loading="lazy">
       <div><b>Pokedex</b></div>
       <div class="ms-auto" id="authstate"></div>
     </nav>
   </header>
 
-  <main>
+  <main class="bg-dark">
+    <section class="container-fluid mt-2">
+      <div class="row">
+        <div class="col-xl-2 col-md-3">
+          <div id="pokeList" class="overflow-y-auto p-2 border border-red rounded-2">
+            
+          </div>
+        </div>
+      </div>
+    </section>
 
 
   </main>
 
-  <footer class="text-bg-dark">
+  <footer class="text-bg-red text-shadow">
     <div class="text-center">
       <p class="mb-0"><small>Made with <i class="mdi mdi-heart text-pink"></i> by CodeWorks</small></p>
     </div>

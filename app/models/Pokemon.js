@@ -24,8 +24,8 @@ export class Pokemon {
     this.speed = data.stats[5].base_stat;
     this.weight = data.weight;
     this.height = data.height;
-    this.imgFrontURL = data.sprites.front_default;
-    this.imgBackURL = data.sprites.back_default;
+    this.img = data.sprites.front_default;
+    this.backImg = data.sprites.back_default;
   }
 
   get pokemonTypes() {
@@ -47,13 +47,13 @@ export class Pokemon {
     <div  class="p-3 border border-red rounded-2">
       <div class="d-flex justify-content-between">
         <h3 class="text-capitalize text-bg-dark fw-bold text-center fs-1">${this.name}</h3>
-        <button onclick="app.sandboxPokemonController.savePokemon('${this.name}')" class="btn btn-outline-light text-teal rounded-pill fs-5 text-capitalize text-start fw-bold">
-        Save Pokemon to Collection
+        <button onclick="app.sandboxPokemonController.savePokemon()" class="btn btn-outline-light text-teal rounded-pill fs-5 text-capitalize text-start fw-bold">
+        Catch Pokemon
         </button>
       </div>
       <div class="d-flex justify-content-center">
-        <img src="${this.imgFrontURL}" alt="${this.name} from Pokemon" class="poke-img">
-        <img src="${this.imgBackURL}" alt="A picture of ${this.name} from behind" class="poke-img">
+        <img src="${this.img}" alt="${this.name} from Pokemon" class="poke-img">
+        <img src="${this.backImg}" alt="A picture of ${this.name} from behind" class="poke-img">
       </div>
       <div class="border border-teal rounded-2 text-teal fs-3 fw-bold p-3">
         <div class="mb-3 text-capitalize">

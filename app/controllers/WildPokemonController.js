@@ -14,7 +14,7 @@ export class WildPokemonController {
     const pokemon = AppState.wildPokemon
     let pokemonContent = ''
     const pokeListElm = document.getElementById('pokeList')
-    pokemon.forEach(poke => pokemonContent += poke.wildPokemonList)
+    pokemon.forEach(poke => pokemonContent += poke.wildPokemonButton)
     pokeListElm.innerHTML = pokemonContent
   }
 

@@ -6,7 +6,7 @@ export class WildPokemon {
     this.name = data.name
   }
 
-  get wildPokemonList() {
+  get wildPokemonButton() {
     return `
     <button onclick="app.wildPokemonController.getActivePokemon('${this.name}')" class="btn btn-dark text-teal text-capitalize text-start fs-5 fw-bold w-100" title="${this.name}" type="button">
       <span class="mdi mdi-pokeball"></span>
@@ -19,17 +19,18 @@ export class WildPokemon {
 export class SandboxPokemon extends WildPokemon {
   constructor(data) {
     super(data);
-    
   }
 
 
-  get sandboxPokemonList() {
+  get sandboxPokemonButton() {
     return `
+    <div  class="d-flex align-items-center mb-2">
       <input type="checkbox" class="me-1">
       <button class="btn btn-teal fs-5 text-capitalize text-start fw-bold w-100">
         <span class="mdi mdi-pokeball"></span>
-          Bulbasaur
+          ${this.name}
       </button>
+    </div>  
     `
   }
 }

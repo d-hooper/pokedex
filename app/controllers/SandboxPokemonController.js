@@ -7,10 +7,15 @@ export class SandboxPokemonController {
   constructor() {
     console.log('Sandbox Controller');
     AppState.on('identity', this.getSandboxPokemon)
+    AppState.on('sandboxPokemon', this.drawSandboxPokemon)
   }
 
   drawSandboxPokemon() {
-
+    const sandboxPokemon = AppState.sandboxPokemon
+    let sandboxListContent = ''
+    const sandboxPokemonElm = document.getElementById('sandboxPokemon')
+    sandboxPokemon.forEach(pokemon => sandboxListContent += pokemon.sandboxPokemonButton)
+    sandboxPokemonElm.innerHTML = sandboxListContent
   }
 
   async getSandboxPokemon() {

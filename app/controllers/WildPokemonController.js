@@ -2,7 +2,7 @@ import { AppState } from "../AppState.js"
 import { pokemonService } from "../services/WildPokemonService.js"
 import { Pop } from "../utils/Pop.js"
 
-export class PokemonController {
+export class WildPokemonController {
 
   constructor() {
     AppState.on('wildPokemon', this.drawWildPokemon)

@@ -45,7 +45,12 @@ export class Pokemon {
   get pokemonCard() {
     return `
     <div  class="p-3 border border-red rounded-2">
-      <h3 class="text-capitalize text-bg-dark fw-bold text-center fs-1">${this.name}</h3>
+      <div class="d-flex justify-content-between">
+        <h3 class="text-capitalize text-bg-dark fw-bold text-center fs-1">${this.name}</h3>
+        <button onclick="app.sandboxPokemonController.savePokemon('${this.name}')" class="btn btn-outline-light text-teal rounded-pill fs-5 text-capitalize text-start fw-bold">
+        Save Pokemon to Collection
+        </button>
+      </div>
       <div class="d-flex justify-content-center">
         <img src="${this.imgFrontURL}" alt="${this.name} from Pokemon" class="poke-img">
         <img src="${this.imgBackURL}" alt="A picture of ${this.name} from behind" class="poke-img">

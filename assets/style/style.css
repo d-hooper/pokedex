@@ -17,6 +17,11 @@ main {
   min-height: 30dvh;
 }
 
+.btn-outline-light:hover {
+  color: var(--bs-danger)!important;
+  text-shadow: 3px 3px 5px #00000046;
+}
+
 #pop-toast-container {
   display: flex;
   flex-direction: column;
